@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-4xl">An index vue</h1>
+    <h1 class="text-2xl">An about page</h1>
   </div>
 </template>
 
@@ -8,8 +8,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'index',
+  name: 'About',
   methods: {},
 })
 </script>
-
