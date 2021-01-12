@@ -36,6 +36,9 @@
           <li class="md:mr-5 lg:mr-10 text-lg font-medium">
             <nuxt-link to="/about">About</nuxt-link>
           </li>
+          <li class="md:mr-5 lg:mr-10 text-lg font-medium">
+            <nuxt-link to="/about">About</nuxt-link>
+          </li>
         </ul>
       </nav>
       <!-- END Global navigation -->
