@@ -16,12 +16,13 @@
       <!-- END Logo text or image -->
 
       <!-- Search field -->
-      <form class="mb-4 w-full md:mb-0 md:w-1/4">
+      <form class="mb-4 w-full md:mb-0 md:w-1/4" @submit.prevent="handleSearch">
         <label class="hidden" for="search-form">Search</label>
         <input
           class="bg-grey-lightest border-2 focus:border-orange p-2 rounded-lg shadow-inner w-full"
           placeholder="Search"
           type="text"
+          v-model="searchQuery"
         />
         <button class="hidden">Submit</button>
       </form>
@@ -30,14 +31,14 @@
       <!-- Global navigation -->
       <nav>
         <ul class="list-reset md:flex md:items-center">
-          <li class="md:mr-5 lg:mr-6 text-lg font-medium">
+          <li class="md:mr-5 lg:mr-10 text-lg font-medium">
             <nuxt-link to="/">Home</nuxt-link>
           </li>
           <li class="md:mr-5 lg:mr-10 text-lg font-medium">
             <nuxt-link to="/about">About</nuxt-link>
           </li>
           <li class="md:mr-5 lg:mr-10 text-lg font-medium">
-            <nuxt-link to="/about">About</nuxt-link>
+            <nuxt-link to="/mars">Planet</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -47,7 +48,21 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
-export default Vue.extend({})
+export default Vue.extend({
+  name: 'Nav',
+
+  data() {
+    return {
+      searchQuery: '',
+    };
+  },
+
+  methods: {
+    handleSearch(): void {
+      this.$router.push(this.searchQuery);
+    },
+  },
+});
 </script>
