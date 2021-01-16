@@ -1,5 +1,7 @@
 <template>
-  <div class="flex place-items-center justify-items-center flex-col text-center">
+  <div
+    class="flex place-items-center justify-items-center flex-col text-center"
+  >
     <h1 class="text-4xl">{{ planet.title }}</h1>
     <img
       :src="planet.image"
@@ -16,12 +18,18 @@ import { Planet } from 'utils/Planet';
 
 export default Vue.extend({
   name: 'index',
-
   data() {
     return {
       planet: {} as Planet,
     };
   },
+
+  head() {
+    return {
+      title: 'mars',
+    };
+  },
+
   async asyncData({ params }) {
     // planet should be an array of Planet
     const planet: Planet | void = await fetch(
@@ -34,6 +42,12 @@ export default Vue.extend({
       }
     });
     return { planet };
+  },
+
+  methods: {
+    sayHello(): string {
+      return 'Hello world';
+    },
   },
 });
 </script>
