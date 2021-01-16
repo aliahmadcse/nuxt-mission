@@ -66,3 +66,8 @@ export default Vue.extend({
   },
 });
 </script>
+<style>
+.nuxt-link-exact-active {
+  @apply text-green-600;
+}
+</style>

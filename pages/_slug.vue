@@ -9,6 +9,10 @@
       style="width: 400px; height: 400px"
       class="mt-4"
     />
+    <button @click="toggleShow" class="btn-blue">Show Planets</button>
+    <div v-if="show">
+      <planets-list></planets-list>
+    </div>
   </div>
 </template>
 
@@ -21,6 +25,7 @@ export default Vue.extend({
   data() {
     return {
       planet: {} as Planet,
+      show: false,
     };
   },
 
@@ -47,6 +52,10 @@ export default Vue.extend({
   methods: {
     sayHello(): string {
       return 'Hello world';
+    },
+
+    toggleShow(): void {
+      this.show = !this.show;
     },
   },
 });
