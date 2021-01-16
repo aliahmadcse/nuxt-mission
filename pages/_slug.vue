@@ -9,10 +9,7 @@
       style="width: 400px; height: 400px"
       class="mt-4"
     />
-    <button @click="toggleShow" class="btn-blue">Show Planets</button>
-    <div v-if="show">
-      <planets-list></planets-list>
-    </div>
+    <lazy-planets-list />
   </div>
 </template>
 
